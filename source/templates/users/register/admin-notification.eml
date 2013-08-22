@@ -1,0 +1,1 @@
+<p>A new user just registered at @{typef_title}@.<pm:if expr="typef_require_approval">  You must approve their account so they can login: <a href="@{approvalurl}@">@{approvalurl}@</a>.</pm:if></p>

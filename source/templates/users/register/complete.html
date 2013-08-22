@@ -1,0 +1,11 @@
+<pm:html>
+	<pm:head>
+		<title>@{page_title}@</title>
+	</pm:head>
+	<pm:body>
+		<h2>Registration Complete</h2>
+		<p>Your account registration is complete.
+			<pm:if expr="typef_require_confirmation">You should receive an email with a link to confirm your email address and activate your account.</pm:if>
+			<pm:if expr="typef_require_approval">Activation of your account is pending approval by an administrator. You will be notified by email once your account has been approved.</pm:if></p>
+	</pm:body>
+</pm:html>

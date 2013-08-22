@@ -1,0 +1,23 @@
+<pm:html skin="tf6">
+	<pm:head>
+		<title>Log In</title>
+
+				<pm:scriptonce src="~/files/static/js/bootstrap.js" type="text/javascript"></pm:scriptonce>
+		<script>
+			$(function() { $('#login-main input.text[name="username"]').focus(); });
+		</script>
+
+	</pm:head>
+	<pm:body>
+			<pm:loop name="errors" as="error">
+				<div class="alert alert-error">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					@{error->message}@
+				</div>
+			</pm:loop>
+		<div id="login-main">
+			@{post_redir = globals->request->post_redir}@
+			<pm:include template="/users/loginform.inc.html" />
+		</div>
+	</pm:body>
+</pm:html>

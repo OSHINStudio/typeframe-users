@@ -1,0 +1,56 @@
+<pm:html>
+	<pm:head>
+		<title>@{page_title}@</title>
+		<pm:scriptonce src="@{typef_web_dir}@/files/static/jquery/jquery.js"></pm:scriptonce>
+		<pm:scriptonce src="@{typef_web_dir}@/files/static/jquery/jquery.formhandler.js"></pm:scriptonce>
+		<script>
+			$(function()
+			{
+				var opts = {};
+				<pm:if expr="fields">opts.fields = @{json_encode(fields)}@;</pm:if>
+				<pm:if expr="errors">opts.errors = @{json_encode(errors)}@;</pm:if>
+				$('#register form').formHandler('@{typef_app_dir}@/validate', opts);
+			});
+		</script>
+	</pm:head>
+	<pm:body>
+		<h2>@{page_header}@</h2>
+		<pm:if expr="loggedin">
+			<p>You are already logged in.</p>
+		</pm:if>
+		<pm:else>
+			<noscript><p pm:loop="errors error" class="error">@{error->message}@</p></noscript>
+			<div id="register">
+				<form method="post">
+					<table class="fieldset">
+						<tr>
+							<td>User Name</td>
+							<td><input type="text" name="username" class="text" value="@{globals->post->username}@" /></td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td><input type="text" name="email" class="text" value="@{globals->post->email}@" /></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td><input type="password" class="text" name="password" /></td>
+						</tr>
+						<tr>
+							<td>Confirm Password</td>
+							<td><input type="password" class="text" name="password2" /></td>
+						</tr>
+						<tr>
+							<td>First Name</td>
+							<td><input type="text" class="text" name="firstname" value="@{globals->post->firstname}@" /></td>
+						</tr>
+						<tr>
+							<td>Last Name</td>
+							<td><input type="text" class="text" name="lastname" value="@{globals->post->lastname}@" /></td>
+						</tr>
+					</table>
+					<input type="submit" class="submit" value="Register" />
+				</form>
+			</div>
+		</pm:else>
+	</pm:body>
+</pm:html>

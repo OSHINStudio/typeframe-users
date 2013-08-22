@@ -1,0 +1,31 @@
+<registry>
+	<application name="Login" title="Log In" base="/login" map="hard"/>
+	<application name="Logout" title="Log Out" base="/logout" map="hard"/>
+	<application name="Reset Password" title="Reset Password" base="/reset" map="hard"/>
+	<application name="New Password" title="New Password" base="/password" map="hard"/>
+	<application name="Register Account" base="/users/register" map="soft"/>
+	<application name="Confirm Account" base="/confirm" map="hard"/>
+	<application name="Users Admin" title="Users" icon="users.gif" base="/admin/users" map="hard" category="System">
+		<config name="Users">
+			<item name="TYPEF_ALLOW_REGISTRATION" caption="Allow new account registration" type="boolean" default="1" />
+			<item name="TYPEF_ALLOW_LOGIN_COOKIE" caption="Allow users to store login cookies" type="boolean" default="1" />
+			<item name="TYPEF_LOGIN_COOKIE_EXPIRE" caption="# days to store login cookies" type="text" default="90" />
+			<item name="TYPEF_REQUIRE_CONFIRMATION" caption="Require email confirmation" type="boolean" default="1" />
+			<item name="TYPEF_TEMP_AFTER_REG" caption="Allow temp login without confirmation" type="boolean" default="0" />
+			<item name="TYPEF_REQUIRE_APPROVAL" caption="Require admin approval to activate accounts" type="boolean" default="0" />
+			<item name="TYPEF_REQUIRE_APPROVAL_NOTIFICATION" caption="Email users when admin approval is required" type="boolean" default="0" />
+			<item name="TYPEF_REGISTRATION_NOTIFICATION" caption="Email these addresses when a user registers" type="text" default="" />
+			<item name="TYPEF_AUTH_DEFAULT" caption="Authentication mechanism to use by default" type="text" default="Hash" />
+		</config>
+		<!--<trigger path="*" script="/auth.php" when="after" />-->
+		<plugin name="Users Online" class="Plugin_Users_Online" />
+		<class name="User" script="user.class.php" />
+		<class name="UserConfirm" script="user.class.php" />
+		<class name="UserReset" script="user.class.php" />
+		<class name="UserGroup" script="user.class.php" />
+		<class name="UserGroupAdmin" script="user.class.php" />
+		<class name="FormHandler_User_Name" script="user.class.php" />
+		<class name="FormHandler_User_Email" script="user.class.php" />
+		<class name="FormHandler_User" script="user.class.php" />
+	</application>
+</registry>

@@ -1,0 +1,1 @@
+<p>Thank you for registering at @{typef_title}@.  Your new user name is @{username}@.  You can activate your account by going to this URL: <a href="@{confirmurl}@">@{confirmurl}@</a>.</p>

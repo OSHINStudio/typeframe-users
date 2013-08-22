@@ -1,0 +1,6 @@
+<pm:if expr="allow(typef_web_dir . '/admin/users')">
+	<p><a href="@{typef_web_dir}@/admin/users">There are currently @{usersonline}@ users online.</a></p>
+</pm:if>
+<pm:else>
+	<p>There are currently @{usersonline}@ users online.</p>
+</pm:else>

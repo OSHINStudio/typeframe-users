@@ -1,0 +1,30 @@
+<form action="@{typef_web_dir}@/login" class="form-horizontal login" method="post" style="">
+	<h3>Please Log In</h3>
+	<input type="hidden" name="post_redir" value="@{post_redir}@" />
+
+
+	<div class="control-group">
+		<div class="input-prepend">
+			<span class="add-on"><i class="iconic-user"></i></span>
+			<input type="text" name="username" class="text" placeholder="Username" />
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="input-prepend">
+			<span class="add-on"><i class="iconic-key"></i></span>
+			<input type="password" name="password" class="text" placeholder="Password" />
+		</div>
+	</div>
+
+	<div class="control-group">
+			<label class="checkbox" style="float:left; font-size: 12px; width: 110px">
+				<input type="checkbox" name="remember" value="1"/> Remember me
+			</label>
+			<input type="submit" name="btn" value="Log In" class="btn btn-primary" style="float:right;" />
+	</div>
+			
+				<label style="font-size: 12px; margin-top: -20px; margin-bottom: 20px;"><a href="@{typef_web_dir}@/reset">Forgot password</a></label>
+			
+
+	
+</form>
